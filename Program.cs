@@ -13,8 +13,10 @@ if (string.IsNullOrEmpty(connectionString))
     if (!string.IsNullOrEmpty(url))
     {
         var uri = new Uri(url);
-        var userInfo = uri.UserInfo.Split(':');
-        connectionString = $"Server={uri.Host};Port={uri.Port};Database={uri.AbsolutePath.TrimStart('/')};User={userInfo[0]};Password={userInfo.Length > 1 ? userInfo[1] : ""};";
+        var user = Uri.UnescapeDataString(uri.UserInfo.Split(':')[0]);
+        var pass = uri.UserInfo.Contains(':') ? Uri.UnescapeDataString(uri.UserInfo.Split(':')[1]) : "";
+        var db = uri.AbsolutePath.TrimStart('/');
+        connectionString = $"Server={uri.Host};Port={uri.Port};Database={db};User={user};Password={pass};";
     }
 }
 
@@ -27,12 +29,17 @@ builder.Services.AddCors(options =>
 
 if (!string.IsNullOrEmpty(connectionString))
 {
-    builder.Services.AddDbContext<CafeteriaDbContext>(options =>
-        options.UseMySql(
-            connectionString,
-            ServerVersion.AutoDetect(connectionString)
-        ));
-    builder.Services.AddSingleton<Cafeteria>();
+    try
+    {
+        var serverVersion = new MySqlServerVersion(new Version(8, 0, 36));
+        builder.Services.AddDbContext<CafeteriaDbContext>(options =>
+            options.UseMySql(connectionString, serverVersion));
+        builder.Services.AddSingleton<Cafeteria>();
+    }
+    catch (Exception ex)
+    {
+        Console.WriteLine("Error configurando BD: " + ex.Message);
+    }
 }
 
 var app = builder.Build();
