@@ -67,6 +67,25 @@ if (!string.IsNullOrEmpty(connectionString))
 
 app.MapGet("/health", () => Results.Ok("ok"));
 
+app.MapGet("/debug", () =>
+{
+    var dbUrl = Environment.GetEnvironmentVariable("DATABASE_URL");
+    var mySqlUrl = Environment.GetEnvironmentVariable("MYSQL_URL");
+    var mySqlHost = Environment.GetEnvironmentVariable("MYSQLHOST");
+    var port = Environment.GetEnvironmentVariable("PORT");
+    var connStr = builder.Configuration.GetConnectionString("CafeteriaDb");
+    return Results.Ok(new
+    {
+        hasConnectionString = !string.IsNullOrEmpty(connStr),
+        hasDatabaseUrl = !string.IsNullOrEmpty(dbUrl),
+        hasMysqlUrl = !string.IsNullOrEmpty(mySqlUrl),
+        hasMysqlHost = !string.IsNullOrEmpty(mySqlHost),
+        port = port,
+        dbUrlPrefix = dbUrl?.Substring(0, Math.Min(10, dbUrl?.Length ?? 0)),
+        mySqlUrlPrefix = mySqlUrl?.Substring(0, Math.Min(10, mySqlUrl?.Length ?? 0))
+    });
+});
+
 app.UseDefaultFiles();
 var provider = new Microsoft.AspNetCore.StaticFiles.FileExtensionContentTypeProvider();
 provider.Mappings[".avif"] = "image/avif";
