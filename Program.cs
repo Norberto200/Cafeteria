@@ -34,7 +34,7 @@ if (!string.IsNullOrEmpty(connectionString))
         var serverVersion = new MySqlServerVersion(new Version(8, 0, 36));
         builder.Services.AddDbContext<CafeteriaDbContext>(options =>
             options.UseMySql(connectionString, serverVersion));
-        builder.Services.AddSingleton<Cafeteria>();
+        builder.Services.AddScoped<Cafeteria>();
     }
     catch (Exception ex)
     {
