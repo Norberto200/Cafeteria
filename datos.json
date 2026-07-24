@@ -1,0 +1,168 @@
+{
+  "Productos": [
+    {
+      "Codigo": "A01",
+      "Nombre": "Botella",
+      "Precio": 30.00,
+      "Existencia": 4
+    },
+    {
+      "Codigo": "B02",
+      "Nombre": "Galleta",
+      "Precio": 10.50,
+      "Existencia": 0
+    },
+    {
+      "Codigo": "C03",
+      "Nombre": "Jugo",
+      "Precio": 22.00,
+      "Existencia": 3
+    },
+    {
+      "Codigo": "D04",
+      "Nombre": "Caffe Late",
+      "Precio": 20,
+      "Existencia": 0
+    },
+    {
+      "Codigo": "E05",
+      "Nombre": "Sandwich",
+      "Precio": 35.00,
+      "Existencia": 10
+    },
+    {
+      "Codigo": "F06",
+      "Nombre": "Refresco",
+      "Precio": 18.00,
+      "Existencia": 15
+    },
+    {
+      "Codigo": "G07",
+      "Nombre": "Cafe Americano",
+      "Precio": 25.00,
+      "Existencia": 15
+    },
+    {
+      "Codigo": "H08",
+      "Nombre": "Te",
+      "Precio": 18.00,
+      "Existencia": 12
+    },
+    {
+      "Codigo": "I09",
+      "Nombre": "Pastel",
+      "Precio": 45.00,
+      "Existencia": 6
+    },
+    {
+      "Codigo": "J10",
+      "Nombre": "Papas Fritas",
+      "Precio": 20.00,
+      "Existencia": 18
+    },
+    {
+      "Codigo": "K11",
+      "Nombre": "Chocolate",
+      "Precio": 28.00,
+      "Existencia": 8
+    },
+    {
+      "Codigo": "L12",
+      "Nombre": "Ensalada",
+      "Precio": 40.00,
+      "Existencia": 5
+    },
+    {
+      "Codigo": "M13",
+      "Nombre": "Smoothie",
+      "Precio": 32.00,
+      "Existencia": 7
+    },
+    {
+      "Codigo": "N14",
+      "Nombre": "Yogur",
+      "Precio": 22.00,
+      "Existencia": 10
+    },
+    {
+      "Codigo": "O15",
+      "Nombre": "Muffin",
+      "Precio": 15.00,
+      "Existencia": 12
+    }
+  ],
+  "Transacciones": [
+    {
+      "Tipo": "Reabastecimiento",
+      "Codigo": "A01",
+      "Nombre": "Botella",
+      "Cantidad": 1,
+      "PrecioAnterior": null,
+      "PrecioNuevo": null,
+      "Fecha": "2026-06-30T07:48:40.0969287-06:00"
+    },
+    {
+      "Tipo": "Venta",
+      "Codigo": "A01",
+      "Nombre": "Botella",
+      "Cantidad": 4,
+      "PrecioAnterior": null,
+      "PrecioNuevo": null,
+      "Fecha": "2026-06-30T07:48:57.0432887-06:00"
+    },
+    {
+      "Tipo": "Venta",
+      "Codigo": "D04",
+      "Nombre": "Caffe Late",
+      "Cantidad": 5,
+      "PrecioAnterior": null,
+      "PrecioNuevo": null,
+      "Fecha": "2026-06-30T09:13:48.8061378-06:00"
+    },
+    {
+      "Tipo": "Venta",
+      "Codigo": "C03",
+      "Nombre": "Jugo",
+      "Cantidad": 1,
+      "PrecioAnterior": null,
+      "PrecioNuevo": null,
+      "Fecha": "2026-06-30T09:20:47.6978961-06:00"
+    },
+    {
+      "Tipo": "Venta",
+      "Codigo": "B02",
+      "Nombre": "Galleta",
+      "Cantidad": 2,
+      "PrecioAnterior": null,
+      "PrecioNuevo": null,
+      "Fecha": "2026-06-30T10:08:29.4630388-06:00"
+    },
+    {
+      "Tipo": "Venta",
+      "Codigo": "B02",
+      "Nombre": "Galleta",
+      "Cantidad": 13,
+      "PrecioAnterior": null,
+      "PrecioNuevo": null,
+      "Fecha": "2026-06-30T10:09:01.6587813-06:00"
+    },
+    {
+      "Tipo": "Venta",
+      "Codigo": "A01",
+      "Nombre": "Botella",
+      "Cantidad": 1,
+      "PrecioAnterior": null,
+      "PrecioNuevo": null,
+      "Fecha": "2026-06-30T11:57:34.7031966-06:00"
+    },
+    {
+      "Tipo": "Venta",
+      "Codigo": "C03",
+      "Nombre": "Jugo",
+      "Cantidad": 1,
+      "PrecioAnterior": null,
+      "PrecioNuevo": null,
+      "Fecha": "2026-06-30T11:57:34.7185268-06:00"
+    }
+  ]
+}
